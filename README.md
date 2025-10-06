@@ -130,7 +130,7 @@ We must provide an IP address in the range of our subnet for our NGINX container
 NGINX_IP_ADDRESS = "192.168.100.100"
 NGINX_DNS = "desired_dns_entry_here"
 
-###
+### Pi_Hole
 
 We must provide the URL to reach our Pi-Hole server, along with our admin password to authenticate via API.
 
