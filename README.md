@@ -8,7 +8,7 @@ These are a couple examples on how to deploy Tailscale using Infrastructure as C
 ## Prerequisites
 
 * Ansible and Terraform installed on a system we will run our IaC code from
-* A destination Linux server to deploy Tailscale SSH to that can be reached; in my case I am using Ubuntu 24.04.2 LTS
+* A destination Linux server to deploy Tailscale SSH to that can be reached; I am using Ubuntu 24.04.2 LTS
 * A destination Docker environment managed by Portainer where we will deploy our Taiscale subnet, a Tailnet subner router, and an NGINX container to test reachability
 * Optional: a Pi-Hole that we can connect to via API (must have a valid TLS certificate); I am running Pi-Hole in a Docker container that is incidentally reachable via my tailnet
 * A Tailscale account and required auth keys
