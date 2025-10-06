@@ -177,13 +177,13 @@ First, run:
 
 to initialize the backend and provider plugins.
 
-then run:
+Then run:
 
 `terraform plan`
 
-to generate and validate an execution plan,
+to generate and validate an execution plan.
 
-and then finally
+And then finally
 
 `terraform apply`
 
