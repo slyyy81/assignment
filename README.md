@@ -26,7 +26,9 @@ The required role is 'artis3n.tailscale.machine', which can be found here:
 
 `https://github.com/artis3n/ansible-collection-tailscale.git`
 
-This is already defined in the 'requirements.yaml' file, and must be installed by running:
+This is already defined in the 'requirements.yaml' file, and must be installed.
+
+Run the following command to install the requirements:
 
 `ansible-galaxy install -r requirements.yaml`
 
@@ -36,16 +38,14 @@ This should create a 'galaxy_roles' folder containing our required role.
 
 ### Target Host
 
-The group, host and SSH user should be replaced with yours in the 'hosts.ini' file.
+Replace the group, host and SSH user in the 'hosts.ini' file.
 
-In my example:
+In my version of the 'hosts.ini' file, group is 'labo' and I have one host (nucubuntu), along with the user I will be using to SSH to the server to run the playbook.
 
 ```
 [labo]
 nucubuntu.sylvainroy.me ansible_ssh_user=slyyy
 ```
-
-My group is 'labo' and I have one host (nucubuntu), along with the user I will be using to SSH to the server to run the playbook.
 
 ### Vault and Tailscale Authkey
 
