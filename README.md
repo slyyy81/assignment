@@ -148,8 +148,10 @@ IP_ADDRESS = "192.168.100.2"
 
 We must provide an IP address in the range of our subnet for our NGINX container, and the desired DNS entry that we will add to our DNS server (the Pi-Hole).
 
+```
 NGINX_IP_ADDRESS = "192.168.100.100"
 NGINX_DNS = "desired_dns_entry_here"
+```
 
 ### Pi-Hole
 
