@@ -109,9 +109,15 @@ Edit the provided 'variables.auto.tfvars.example', removing the '.example', and 
 
 ### Portainer
 
+#### portainer_endpoint
+
 You should indicate where your Portainer instance can be reached via URL or IP address.
 
+#### portainer_api_key
+
 The api_key can be generated under 'My Account' in Portainer as an 'Access token'.
+
+#### portainer_endpoint_id
 
 The endpoint ID indicates which endpoint we will be making the changes to in Portainer.
 
