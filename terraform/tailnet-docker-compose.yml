@@ -1,0 +1,28 @@
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    hostname: tailscale-subnet-router
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_EXTRA_ARGS=--advertise-tags=tag:container
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_USERSPACE=false
+      - TS_ROUTES=${TS_SUBNET}
+    volumes:
+      - ${PWD}/tailscale/state:/var/lib/tailscale
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+    restart: unless-stopped
+    networks:
+      tailnet:
+        ipv4_address: ${IP_ADDRESS}
+networks:
+    tailnet:
+      name: tailnet
+      driver: bridge
+      ipam:
+        config:
+          - subnet: ${TS_SUBNET}
+            gateway: ${IP_GATEWAY}

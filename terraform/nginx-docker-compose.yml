@@ -1,0 +1,10 @@
+services:
+  nginx:
+    image: nginx
+    networks:
+      tailnet:
+        ipv4_address: ${IP_ADDRESS}
+    
+networks:
+  tailnet:
+    external: true

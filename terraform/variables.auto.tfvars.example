@@ -1,0 +1,21 @@
+# Portainer
+
+portainer_endpoint = "your_portainer_URL_here"
+portainer_api_key = "your_portainer_api_key_here"
+
+#Tailscale Subnet Router
+
+TS_AUTHKEY = "your_tailscale_authkey_here"
+TS_SUBNET = "192.168.100.0/24"
+IP_GATEWAY = "192.168.100.1"
+IP_ADDRESS = "192.168.100.2"
+
+# NGINX
+
+NGINX_IP_ADDRESS = "192.168.100.100"
+NGINX_DNS = "desired_dns_entry_here"
+
+# Pi-Hole
+
+pihole_url = "your_pihole_url_here"
+pihole_password = "your_pihole_password_here"

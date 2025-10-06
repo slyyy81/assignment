@@ -1,0 +1,7 @@
+- hosts: labo
+  vars_files:
+    - vars/secrets.yml
+  roles:
+    - role: artis3n.tailscale.machine
+  vars:
+        tailscale_args: "--ssh"
