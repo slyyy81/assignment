@@ -73,7 +73,7 @@ If you need to edit the auth key, or add additional variables to the vault, you 
 
 ### Enable SSH
 
-Please note that our 'run.yaml' playbook also has the "--ssh" argument defined, which is what indicates that we are not only installing Tailsale, but also enabling SSH.
+Please note that our 'run.yaml' playbook also has the "--ssh" argument defined, which is what indicates that we are not only installing Tailsale (via the assigned role), but also enabling SSH.
 
 ```
   vars:
