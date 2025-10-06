@@ -2,8 +2,8 @@
 
 These are a couple examples on how to deploy Tailscale using Infrastructure as Code methods, namely:
 
-	1. Deploying Tailscale SSH to an existing server using Ansible,
-	2. Deploying a Tailscale subnet router in a Docker environment via Portainer using Terraform. We will also be deploying an nginx container to the same subnet to demonstrate it can be reached via the subnet router, and add its IP address to a Pi-Hole server's local DNS so we don't have to reference it by IP address.
+1. Deploying Tailscale SSH to an existing server using Ansible,
+2. Deploying a Tailscale subnet router in a Docker environment via Portainer using Terraform. We will also be deploying an nginx container to the same subnet to demonstrate it can be reached via the subnet router, and add its IP address to a Pi-Hole server's local DNS so we don't have to reference it by IP address.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ These are a couple examples on how to deploy Tailscale using Infrastructure as C
   * For the purpose of testing you can make auth keys reusable so that they do not expire each time they are used
   * I like to use 3 different auth keys; one for Ansible, one for Terraform, and one for Portainer/Docker, but you could use a single one if it is reusable
 
-# 1. Deploy Tailscale SSH to an existing server using Ansible==
+# 1. Deploy Tailscale SSH to an existing server using Ansible
 
 We will leverage Ansible with a specific role to deploy Tailscale SSH to an existing server.
 
