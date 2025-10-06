@@ -40,7 +40,7 @@ This should create a 'galaxy_roles' folder containing our required role.
 
 Replace the group, host and SSH user in the 'hosts.ini' file.
 
-In my version of the 'hosts.ini' file, group is 'labo' and I have one host (nucubuntu), along with the user I will be using to SSH to the server to run the playbook.
+In my version of the 'hosts.ini' file, group is 'labo' and I have one host (nucubuntu), along with the user that will be used to SSH to the server when running the playbook.
 
 ```
 [labo]
