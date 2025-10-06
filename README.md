@@ -9,7 +9,7 @@ These are a couple examples on how to deploy Tailscale using Infrastructure as C
 
 * Ansible and Terraform installed on a system we will run our IaC code from
 * A destination Linux server to deploy Tailscale SSH to that can be reached; I am using Ubuntu 24.04.2 LTS
-* A destination Docker environment managed by Portainer where we will deploy our Taiscale subnet, a Tailnet subner router, and an NGINX container to test reachability
+* A destination Docker environment managed by Portainer where we will deploy our Taiscale subnet, a Tailnet subner router, and an nginx container to test reachability
 * Optional: a Pi-Hole that we can connect to via API (must have a valid TLS certificate); I am running Pi-Hole in a Docker container that is incidentally reachable via my tailnet
 * A Tailscale account and required auth keys
   * Auth keys can be generated under 'Settings | Keys' in the Tailscale Admin Console (or visit 'https://login.tailscale.com/admin/settings/keys')  *
@@ -132,7 +132,7 @@ IP_GATEWAY = "192.168.100.1"
 IP_ADDRESS = "192.168.100.2"
 ```
 
-### NGINX
+### nginx
 
 We must provide an IP address in the range of our subnet for our NGINX container, and the desired DNS entry that we will add to our DNS server (the Pi-Hole).
 
@@ -173,8 +173,8 @@ If successful, we should see an "Apply complete!" with the number of additions/c
 We should be able to observe the following:
 * 2 new stacks in Portainer, and our 2 new containers
 * The 'tailscale-subnet-router' should appear under Machines in the Tailscale Admin Console
-* A new local DNS record for our NGINX container in our Pi-Hole admin console 
-* We should be able to ping the NGINX container via the subnet router by its IP or DNS record
+* A new local DNS record for our nginx container in our Pi-Hole admin console 
+* We should be able to ping the nginx container via the subnet router by its IP or DNS record
 
 # Ressources
 
