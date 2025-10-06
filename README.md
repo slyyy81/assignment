@@ -29,11 +29,11 @@ This project demonstrates two ways to deploy Tailscale using Infrastructure as C
 * Ansible and Terraform installed on a system from which the IaC code will be run
 * A destination Linux server on which to deploy Tailscale SSH
 * A destination Docker environment managed by Portainer on which to deploy the Tailscale subnet, a Tailscale subnet router, and an NGINX container to test reachability
-* Optional: a Pi-hole that can be connected to via API (must have a valid TLS certificate)
 * A Tailscale account and required auth keys
   * Auth keys can be generated under 'Settings | Keys' in the Tailscale Admin Console (or visit 'https://login.tailscale.com/admin/settings/keys')
   * For the purpose of testing, auth keys can be made reusable so that they do not expire after each use
   * I like to use 3 different auth keys; one for Ansible, one for Terraform, and one for Portainer/Docker, but a single reusable one could be used instead
+* Optional: a Pi-hole that can be connected to via API (must have a valid TLS certificate)
 
 # 1. Deploy Tailscale SSH to an existing server using Ansible
 
