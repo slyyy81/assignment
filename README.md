@@ -96,7 +96,7 @@ When first connecting via SSH, a prompt will appear to visit a URL to login to T
 
 
 
-# 2. Deploy Tailscale subnet router in a Docker environment via Portainer
+# 2. Deploy a Tailscale subnet router in a Docker environment via Portainer using Terraform
 
 We will leverage Terraform and a Portainer provider to deploy a Tailscale subnet router in a Docker environment via Portainer. 
 
