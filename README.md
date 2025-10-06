@@ -49,7 +49,7 @@ nucubuntu.sylvainroy.me ansible_ssh_user=slyyy
 
 ### Vault and Tailscale Authkey
 
-We will create an Ansible vault and vault-password to store our variables, namely the Tailscale authkey.
+We will next create an Ansible vault and vault-password to store our variables, namely the Tailscale authkey.
 
 #### Vault Password
 
