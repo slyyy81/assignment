@@ -98,9 +98,9 @@ When first connecting via SSH, a prompt will appear to visit a URL to login to T
 
 # 2. Deploy a Tailscale subnet router in a Docker environment via Portainer using Terraform
 
-We will leverage Terraform and a Portainer provider to deploy a Tailscale subnet router in a Docker environment via Portainer. 
+We will leverage Terraform, with a Portainer provider, to deploy a Tailscale subnet router container in a Docker environment via Portainer. 
 
-As an added bonus, we will also be deploying an nginx container to the same subnet to demonstrate it can be reached via the subnet router, and we will leverage a Pi-Hole provider to add its IP address to a Pi-Hole server's local DNS so we don't have to reference it by IP address.
+Optionally, we will also deploy an nginx container to the same subnet to demonstrate it can be reached via the subnet router, and we will leverage a Terraform Pi-Hole provider to add its IP address to a Pi-Hole server's local DNS (so we don't have to reference it by IP address).
 
 ## Variables
 
