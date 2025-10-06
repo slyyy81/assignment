@@ -78,6 +78,6 @@ resource "portainer_stack" "nginx-tailscale" {
 }
 
 resource "pihole_dns_record" "nginx" {
-  domain = "nginx.labo.sylvainroy.me"
+  domain = var.NGINX_DNS
   ip     = var.NGINX_IP_ADDRESS
 }
