@@ -22,14 +22,14 @@
 This project demonstrates two ways to deploy Tailscale using Infrastructure as Code methods, namely:
 
 1. Deploying Tailscale SSH to an existing server using Ansible.
-2. Deploying a Tailscale subnet router in a Docker environment via Portainer using Terraform. In addition, NGINX container will be deployed to the same subnet to demonstrate that it can be reached via the subnet router, and its IP address will be added to a Pi-hole server's local DNS so it does not have to referenced by IP address.
+2. Deploying a Tailscale subnet router in a Docker environment via Portainer using Terraform. In addition, an NGINX container will be deployed to the same subnet to demonstrate that it can be reached via the subnet router, and its IP address will be added to a Pi-hole server's local DNS so it does not have to referenced by IP address.
 
 ## Prerequisites
 
 * Ansible and Terraform installed on a system from which the IaC code will be run
 * A destination Linux server on which to deploy Tailscale SSH
-* A destination Docker environment managed by Portainer which to deploy the Tailscale subnet, a Tailscale subnet router, and an NGINX container to test reachability
-* Optional: a Pi-Hole that can be connected to via API (must have a valid TLS certificate); In my lab environment, I am running Pi-hole in a Docker container that is reachable via my tailnet
+* A destination Docker environment managed by Portainer on which to deploy the Tailscale subnet, a Tailscale subnet router, and an NGINX container to test reachability
+* Optional: a Pi-hole that can be connected to via API (must have a valid TLS certificate)
 * A Tailscale account and required auth keys
   * Auth keys can be generated under 'Settings | Keys' in the Tailscale Admin Console (or visit 'https://login.tailscale.com/admin/settings/keys')
   * For the purpose of testing, auth keys can be made reusable so that they do not expire after each use
@@ -74,7 +74,7 @@ Next, create an Ansible vault and vault-password to store the variables, namely 
 
 Create a '.vault-password' file in the 'ansible' folder with a randomly generated password for the vault.
 
-This vault password file is referenced in the 'ansible.cfg', so it will not need to be re-entered each time it is used.
+This vault password file is referenced in 'ansible.cfg', so it will not need to be re-entered each time it is used.
 
 #### Secrets Vault
 
@@ -92,7 +92,7 @@ If you need to edit the auth key, or add additional variables to the vault, you 
 
 ### Enable SSH
 
-Please note that the 'run.yaml' playbook also has the "--ssh" argument defined, which is what indicates that you are not only installing Tailscale (via the assigned role), but also enabling SSH.
+Please note that the 'run.yaml' playbook also has the "--ssh" argument defined, which is what indicates that not only should Tailscale be installed (via the assigned role), but that SSH should also be enabled.
 
 ```
   vars:
@@ -111,9 +111,7 @@ The 'PLAY RECAP' will indicate whether the playbook was successfully executed or
 
 If successful, the server will appear under Machines in the Tailscale Admin Console with an SSH tag.
 
-Please note that when the first connection via SSH is made, a prompt will ask the user to log in to Tailscale and approve the connection.
-
-
+Please note that when the first connection via Tailnet SSH is made, a prompt will ask the user to log in to their Tailscale account and approve the connection.
 
 # 2. Deploy a Tailscale subnet router in a Docker environment via Portainer using Terraform
 
@@ -173,9 +171,9 @@ NGINX_IP_ADDRESS = "192.168.100.100"
 NGINX_DNS = "desired_dns_entry_here"
 ```
 
-### Pi-Hole
+### Pi-hole
 
-Provide the URL to reach the Pi-Hhole server, along with the admin password to authenticate via API.
+Provide the URL to reach the Pi-hole server, along with the admin password to authenticate via API.
 
 ```
 pihole_url = "your_pihole_url_here"
@@ -186,7 +184,7 @@ pihole_password = "your_pihole_password_here"
 
 ### main.tf
 
-'main.tf' defines the providers (Portainer and Pi-Hole), and creates the ressources: one pPortainer stack for the subnet router container, one Portainer stack for the NGINX container, and a DNS entry in Pi-hole.
+'main.tf' defines the providers (Portainer and Pi-hole), and creates the ressources: one Portainer stack for the subnet router container, one Portainer stack for the NGINX container, and a DNS entry in Pi-hole.
 
 ### Run
 
@@ -213,7 +211,7 @@ If successful, the resulting output should read "Apply complete!" alongside the 
 You should be able to observe the following:
 * 2 new stacks in Portainer, and your 2 new containers
 * The 'tailscale-subnet-router' should appear under Machines in the Tailscale Admin Console
-* A new local DNS record for your NGINX container in your Pi-Hole admin console 
+* A new local DNS record for your NGINX container in your Pi-hole admin console 
 * You should be able to ping the NGINX container via the subnet router by its IP or DNS record
 
 # Resources
