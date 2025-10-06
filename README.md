@@ -84,7 +84,7 @@ Create the secrets vault:
 
 And define the tailscale_authkey:
 
-tailscale_authkey: your_tailscale_authkey_here
+`tailscale_authkey: your_tailscale_authkey_here`
 
 If you need to edit the auth key, or add additional variables to the vault, you can use:
 
