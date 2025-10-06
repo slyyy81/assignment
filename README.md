@@ -197,7 +197,7 @@ We should be able to observe the following:
 * A new local DNS record for our nginx container in our Pi-Hole admin console 
 * We should be able to ping the nginx container via the subnet router by its IP or DNS record
 
-# Ressources
+# Resources
 
 ## Tailscale
 
