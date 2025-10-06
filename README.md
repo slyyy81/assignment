@@ -87,7 +87,9 @@ The 'PLAY RECAP' will indicate whether the playbook was succesfully executed or 
 
 If successful, you should see the server appear under your Machines in the Tailscale Admin Console with an SSH tag.
 
-When you SSH to the host, you will be prompted to visit a URL to login to Tailscale to approve the 
+When you SSH to the host for the first time, you will be prompted to visit a URL to login to Tailscale to approve the connection.
+
+
 
 # 2. Deploy Tailscale subnet router in a Docker environment via Portainer
 
