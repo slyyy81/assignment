@@ -1,3 +1,22 @@
+# Table of Contents
+ - Introduction
+   - Prerequisites
+ - Deploy Tailscale SSH to an existing server using Ansible
+   - Requirements
+   -  Variables
+      - Target host
+      - Vault and Tailscale Authkey
+      - Enable SSH
+   - Deploy
+ - Deploy a Tailscale subnet router in a Docker environment via Portainer using Terraform
+   -  Variables
+      -  Portainer
+      -  Tailscale
+      -  NGINX
+      -  Pi-hole
+   -  Deploy
+ -  Resources
+
 # Introduction
 
 This project demonstrates two ways to deploy Tailscale using Infrastructure as Code methods, namely:
