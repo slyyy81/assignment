@@ -5,7 +5,7 @@
    - Requirements
    -  Variables
       - Target host
-      - Vault and Tailscale Authkey
+      - Vault and Tailscale Auth Key
       - Enable SSH
    - Deploy
  - Deploy a Tailscale subnet router in a Docker environment via Portainer using Terraform
