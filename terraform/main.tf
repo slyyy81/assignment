@@ -68,7 +68,7 @@ resource "portainer_stack" "nginx-tailscale" {
   name              = "nginx-tailscale"
   deployment_type   = "standalone"
   method            = "file"
-  endpoint_id       = 3
+  endpoint_id       = var.portainer_endpoint_id
   stack_file_path   = "./nginx-docker-compose.yml"
 
   env {
