@@ -52,15 +52,19 @@ My group is 'labo' and I have one host (nucubuntu), along with the user I will b
 
 We will create an Ansible vault and vault-password to store our variables, namely the Tailscale authkey.
 
-* Create a '.vault-password' file in the ansible folder with a randomly generated password for our vault.
+#### Vault Password
+
+Create a '.vault-password' file in the ansible folder with a randomly generated password for our vault.
 
 This vault password file is referenced in the 'ansible.cfg', so it won't need to be entered each time it is used.
 
-* Create the secrets vault:
+#### Secrets Vault
+
+Create the secrets vault:
 
 `ansible-vault create ./vars/secrets.yml`
 
-* And define the tailscale_authey:
+And define the tailscale_authey:
 
 tailscale_authkey: your_tailscale_authkey_here
 
