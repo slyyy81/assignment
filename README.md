@@ -164,6 +164,12 @@ pihole_password = "your_pihole_password_here"
 
 ## Deploy
 
+### main.tf
+
+'main.tf' defines our providers (Portainer and Pi-Hole), and creates our ressources: one portainer stack for our subnet router container, one portainer stack for our nginx container, and a DNS entry in Pi-Hole.
+
+### Run
+
 First, we must run:
 
 `terraform init`
