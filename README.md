@@ -12,8 +12,8 @@ These are a couple examples on how to deploy Tailscale using Infrastructure as C
 * A destination Docker environment managed by Portainer where we will deploy our Tailscale subnet, a Tailscale subner router, and an nginx container to test reachability
 * Optional: a Pi-Hole that we can connect to via API (must have a valid TLS certificate); I am running Pi-Hole in a Docker container that is incidentally reachable via my tailnet
 * A Tailscale account and required auth keys
-  * Auth keys can be generated under 'Settings | Keys' in the Tailscale Admin Console (or visit 'https://login.tailscale.com/admin/settings/keys')  *
-  * For the purpose of testing you can make auth keys reusable so that they do not expire each time they are used
+  * Auth keys can be generated under 'Settings | Keys' in the Tailscale Admin Console (or visit 'https://login.tailscale.com/admin/settings/keys')
+  * For the purpose of testing, you can make auth keys reusable so that they do not expire each time they are used
   * I like to use 3 different auth keys; one for Ansible, one for Terraform, and one for Portainer/Docker, but you could use a single one if it is reusable
 
 # 1. Deploy Tailscale SSH to an existing server using Ansible
