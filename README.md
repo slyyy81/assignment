@@ -82,7 +82,7 @@ If successful, you should see the server appear under your Machines in the Tails
 
 When you SSH to the host, you will be prompted to visit a URL to login to Tailscale to approve the 
 
-# 2. Deploy Tailscale subnet router in a Docker environment via Portainer==
+# 2. Deploy Tailscale subnet router in a Docker environment via Portainer
 
 We will leverage Terraform and a Portainer provider to deploy a Tailscale subnet router in a Docker environment via Portainer. 
 
