@@ -76,8 +76,10 @@ If you need to edit the auth key, or add additional variables to the vault, you 
 
 Please note that our 'run.yaml' playbook also has the "--ssh" argument defined, which is what indicates that we are not only installing Tailsale, but also enabling SSH.
 
+```
   vars:
         tailscale_args: "--ssh"
+```
 
 ## Deploy
 
@@ -85,7 +87,7 @@ To run the playbook, simply run:
 
 `ansible-playbook run.yaml -kK`
 
-The '-kK' option will prompt us for the connection and privilege escalation password to SSH to the host.
+The '-kK' options will prompt us for the connection and privilege escalation password to SSH to the host, and may be omitted if they are not required.
 
 The 'PLAY RECAP' will indicate whether the playbook was succesfully executed or not.
 
