@@ -2,6 +2,7 @@
 
 portainer_endpoint = "your_portainer_URL_here"
 portainer_api_key = "your_portainer_api_key_here"
+portainer_endpoint_id = number_of_your_endpoint_in_portainer
 
 #Tailscale Subnet Router
 

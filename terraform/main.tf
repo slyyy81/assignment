@@ -13,6 +13,7 @@ terraform {
 
 variable "portainer_endpoint" {}
 variable "portainer_api_key" {}
+variable "portainer_endpoint_id" {}
 variable "TS_AUTHKEY" {}
 variable "TS_SUBNET" {}
 variable "IP_GATEWAY" {}
@@ -42,7 +43,7 @@ resource "portainer_stack" "tailscale-subnet-router" {
   name              = "tailscale-subnet-router"
   deployment_type   = "standalone"
   method            = "file"
-  endpoint_id       = 3
+  endpoint_id       = var.portainer_endpoint_id
   stack_file_path   = "./tailnet-docker-compose.yml"
 
   env {
