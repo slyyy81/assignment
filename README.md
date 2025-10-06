@@ -68,6 +68,13 @@ If you need to edit the auth key, or add additional variables to the vault, you 
 
 `ansible-vault edit./vars/secrets.yml`
 
+### Enable SSH
+
+Please note that our 'run.yaml' playbook also has the "--ssh" argument defined, which is what indicates that we are not only installing Tailsale, but also enabling SSH.
+
+  vars:
+        tailscale_args: "--ssh"
+
 ## Deploy
 
 To run the playbook, simply run:
