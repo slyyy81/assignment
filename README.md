@@ -82,7 +82,7 @@ Please note that our 'run.yaml' playbook also has the "--ssh" argument defined, 
 
 ## Deploy
 
-To run the playbook, simply run:
+Run the following command to execute the playbook:
 
 `ansible-playbook run.yaml -kK`
 
@@ -90,9 +90,9 @@ The '-kK' options will prompt us for the connection and privilege escalation pas
 
 The 'PLAY RECAP' will indicate whether the playbook was succesfully executed or not.
 
-If successful, you should see the server appear under your Machines in the Tailscale Admin Console with an SSH tag.
+If successful, the server should appear under Machines in the Tailscale Admin Console with an SSH tag.
 
-When you SSH to the host for the first time, you will be prompted to visit a URL to login to Tailscale to approve the connection.
+When first connecting via SSH, a prompt will appear to visit a URL to login to Tailscale, and approve the connection.
 
 
 
@@ -104,13 +104,13 @@ As an added bonus, we will also be deploying an nginx container to the same subn
 
 ## Variables
 
-Edit the provided 'variables.auto.tfvars.example', removing the '.example', and configuring the following variables:
+Edit the provided 'variables.auto.tfvars.example', removing the '.example', and configure the following variables:
 
 ### Portainer
 
 #### portainer_endpoint
 
-You should indicate where your Portainer instance can be reached via URL or IP address.
+Indicates where your Portainer instance can be reached via URL or IP address.
 
 #### portainer_api_key
 
@@ -120,11 +120,13 @@ The api_key can be generated under 'My Account' in Portainer as an 'Access token
 
 The endpoint ID indicates which endpoint we will be making the changes to in Portainer.
 
-It can be found in the URL of your endpoint's dashboard; for example in my dashboard:
+It can be found in the URL of the Portainer endpoint's dashboard.
+
+For example in my dashboard, the URL is:
 
 `https://portainer.labo.sylvainroy.me/#!/3/docker/dashboard`
 
-Indicates that my endpoitn ID is '3'.
+Which Indicates that my endpoint ID is '3'.
 
 ```
 portainer_endpoint = "your_portainer_URL_here"
@@ -134,7 +136,7 @@ portainer_endpoint_id = number_of_your_endpoint_in_portainer
 
 ### Taiscale
 
-This is where you will enter your Tailscale auth key, and specify which subnet will be used with our subnet router, along with its gateway, and the desired IP address of our subnet router container.
+Enter your Tailscale auth key, and specify which subnet will be used with the subnet router, along with its gateway, and the desired IP address of the subnet router container.
 
 ```
 TS_AUTHKEY = "your_tailscale_authkey_here"
@@ -145,7 +147,7 @@ IP_ADDRESS = "192.168.100.2"
 
 ### nginx
 
-We must provide an IP address in the range of our subnet for our NGINX container, and the desired DNS entry that we will add to our DNS server (the Pi-Hole).
+Provide an IP address in the range of our subnet for the NGINX container, and the desired DNS entry that we will added to the DNS server (Pi-Hole).
 
 ```
 NGINX_IP_ADDRESS = "192.168.100.100"
@@ -154,7 +156,7 @@ NGINX_DNS = "desired_dns_entry_here"
 
 ### Pi-Hole
 
-We must provide the URL to reach our Pi-Hole server, along with our admin password to authenticate via API.
+Provide the URL to reach the Pi-Hole server, along with the admin password to authenticate via API.
 
 ```
 pihole_url = "your_pihole_url_here"
@@ -165,29 +167,29 @@ pihole_password = "your_pihole_password_here"
 
 ### main.tf
 
-'main.tf' defines our providers (Portainer and Pi-Hole), and creates our ressources: one portainer stack for our subnet router container, one portainer stack for our nginx container, and a DNS entry in Pi-Hole.
+'main.tf' defines the providers (Portainer and Pi-Hole), and creates the ressources: one portainer stack for the subnet router container, one portainer stack for the nginx container, and a DNS entry in Pi-Hole.
 
 ### Run
 
-First, we must run:
+First, run:
 
 `terraform init`
 
-To initialize the backend and provider plugins.
+to initialize the backend and provider plugins.
 
-Then:
+then run:
 
 `terraform plan`
 
-To generate and validate an execution plan.
+to generate and validate an execution plan,
 
-And then finally
+and then finally
 
 `terraform apply`
 
-To apply the changes (after entering 'yes' to approve).
+to apply the changes (after entering 'yes' to approve).
 
-If successful, we should see an "Apply complete!" with the number of additions/changes made by Terraform.
+If successful, the resulting output should read "Apply complete!" with the number of additions/changes made by Terraform.
 
 We should be able to observe the following:
 * 2 new stacks in Portainer, and our 2 new containers
